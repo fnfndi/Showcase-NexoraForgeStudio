@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexoraForgeStudio — Poster</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Inter','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    *{-webkit-tap-highlight-color:transparent}
+    body{font-family:'Inter',sans-serif;background:#08080f}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes glow-pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+    @keyframes rotate-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .shimmer{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);background-size:200% 100%;animation:shimmer 3s infinite}
+    .float{animation:float 4s ease-in-out infinite}
+    .glow-p{animation:glow-pulse 2s ease-in-out infinite}
+    .rotate-s{animation:rotate-slow 20s linear infinite}
+    .grad-text{background:linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grad-text-warm{background:linear-gradient(135deg,#f97316,#ef4444,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grad-border{border-image:linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6) 1}
+    .glass{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06)}
+    .glass-bright{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+    .dot-grid{background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:20px 20px}
+    .mockup-shadow{box-shadow:0 25px 60px -12px rgba(0,0,0,0.7),0 0 40px rgba(59,130,246,0.08)}
+    .poster-shadow{box-shadow:0 0 80px rgba(59,130,246,0.15)}
+    .no-scrollbar::-webkit-scrollbar{display:none}
+    .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+
+    /* Template Preview Styles */
+    .tpl-vlog{background:linear-gradient(145deg,#0f0f1a,#1a1a2e)}
+    .tpl-store{background:linear-gradient(145deg,#0f1a0f,#1a2e1a)}
+    .tpl-landing{background:linear-gradient(145deg,#1a0f1a,#2e1a2e)}
+    .tpl-link{background:linear-gradient(145deg,#0f1a1a,#1a2e2e)}
+    .tpl-catalog{background:linear-gradient(145deg,#1a1a0f,#2e2e1a)}
+    .tpl-blog{background:linear-gradient(145deg,#0f0f1a,#16213e)}
+
+    .mini-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:4px}
+    .mini-btn{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:3px;height:6px;width:24px}
+    .mini-img{background:rgba(255,255,255,0.06);border-radius:3px}
+    .mini-text{background:rgba(255,255,255,0.08);border-radius:2px;height:3px}
+    .mini-text-w{background:rgba(255,255,255,0.12);border-radius:2px;height:3px}
+    .mini-nav{background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.05)}
+    .mini-hero{background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(139,92,246,0.1));border-radius:4px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+    .mini-circle{background:rgba(255,255,255,0.06);border-radius:50%}
+  </style>
+</head>
+<body class="text-white min-h-screen">
+
+  <!-- ============================================= -->
+  <!-- POSTER 1 — UTAMA (Screenshot ini untuk FB) -->
+  <!-- ============================================= -->
+  <div class="max-w-[1080px] mx-auto p-4 space-y-6">
+
+    <!-- POSTER UTAMA -->
+    <div id="poster-main" class="relative bg-[#08080f] rounded-3xl overflow-hidden poster-shadow" style="aspect-ratio:1080/1080">
+      <!-- Background Effects -->
+      <div class="absolute inset-0 dot-grid opacity-40"></div>
+      <div class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-purple-500/8 rounded-full blur-[100px]"></div>
+      <div class="absolute top-[30%] right-[10%] w-[200px] h-[200px] bg-cyan-500/5 rounded-full blur-[80px]"></div>
+
+      <!-- Decorative Ring -->
+      <div class="absolute top-[-80px] right-[-80px] w-[300px] h-[300px] border border-white/[0.03] rounded-full rotate-s"></div>
+      <div class="absolute bottom-[-60px] left-[-60px] w-[250px] h-[250px] border border-white/[0.03] rounded-full rotate-s" style="animation-direction:reverse;animation-duration:25s"></div>
+
+      <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 sm:px-12 py-10 text-center">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+            <span class="iconify text-white text-lg" data-icon="mdi:hammer-wrench"></span>
+          </div>
+          <span class="text-lg font-extrabold tracking-tight">Nexora<span class="grad-text">Forge</span>Studio</span>
+        </div>
+
+        <!-- Tagline -->
+        <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6">
+          <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full glow-p"></span>
+          <span class="text-[11px] text-white/50 font-medium tracking-wide uppercase">Professional Web Design — Affordable Price</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-[1.1] mb-4 max-w-3xl">
+          We Build Websites<br>
+          That Don't Break<br>
+          <span class="grad-text">The Bank</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-white/40 text-xs sm:text-sm max-w-lg leading-relaxed mb-8">
+          For vloggers, content creators & small businesses.<br>
+          Starting at <span class="text-white font-bold">$5</span> • Delivered in <span class="text-white font-bold">24 hours</span> • Free hosting included
+        </p>
+
+        <!-- Price Cards Row -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 w-full max-w-xl">
+          <div class="glass rounded-xl px-3 sm:px-4 py-2.5 flex-1 min-w-[100px]">
+            <div class="text-[10px] text-white/40 mb-0.5">Vlog Site</div>
+            <div class="text-base sm:text-lg font-extrabold grad-text">$5</div>
+          </div>
+          <div class="glass rounded-xl px-3 sm:px-4 py-2.5 flex-1 min-w-[100px]">
+            <div class="text-[10px] text-white/40 mb-0.5">Online Store</div>
+            <div class="text-base sm:text-lg font-extrabold grad-text">$15</div>
+          </div>
+          <div class="glass rounded-xl px-3 sm:px-4 py-2.5 flex-1 min-w-[100px]">
+            <div class="text-[10px] text-white/40 mb-0.5">Landing Page</div>
+            <div class="text-base sm:text-lg font-extrabold grad-text">$8</div>
+          </div>
+          <div class="glass rounded-xl px-3 sm:px-4 py-2.5 flex-1 min-w-[100px]">
+            <div class="text-[10px] text-white/40 mb-0.5">Templates</div>
+            <div class="text-base sm:text-lg font-extrabold grad-text">$2</div>
+          </div>
+        </div>
+
+        <!-- Features Row -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mb-8">
+          <div class="flex items-center gap-1.5 text-[11px] text-white/50">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-decagram"></span>
+            Mobile Friendly
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] text-white/50">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-decagram"></span>
+            Fast Loading
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] text-white/50">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-decagram"></span>
+            Free Hosting
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] text-white/50">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-decagram"></span>
+            Basic SEO
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
+          <div class="flex-1 w-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl px-5 py-3 text-center font-bold text-sm shadow-lg shadow-blue-500/20">
+            📩 DM to Order
+          </div>
+          <div class="flex-1 w-full glass-bright rounded-xl px-5 py-3 text-center font-semibold text-sm">
+            🌐 nexoraforge.com
+          </div>
+        </div>
+
+        <!-- Bottom Trust -->
+        <div class="mt-6 flex items-center gap-4 text-[10px] text-white/25">
+          <span>🇵🇭 Philippines</span>
+          <span>•</span>
+          <span>🇳🇬 Nigeria</span>
+          <span>•</span>
+          <span>🇧🇩 Bangladesh</span>
+          <span>•</span>
+          <span>🇧🇷 Brazil</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- POSTER 2 — TEMPLATE SHOWCASE (Screenshot ini) -->
+    <!-- ============================================= -->
+    <div id="poster-templates" class="relative bg-[#08080f] rounded-3xl overflow-hidden poster-shadow p-5 sm:p-8">
+      <div class="absolute inset-0 dot-grid opacity-30"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-blue-500/5 rounded-full blur-[100px]"></div>
+
+      <div class="relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center gap-2 glass rounded-full px-3 py-1 mb-3">
+            <span class="text-[10px] text-white/50 font-medium tracking-wide uppercase">Template Collection</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold mb-1">Ready-Made Templates</h2>
+          <p class="text-white/35 text-xs">Buy • Download • Customize • Launch</p>
+        </div>
+
+        <!-- Template Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+
+          <!-- Template 1: Vlog -->
+          <div class="group">
+            <div class="tpl-vlog rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <!-- Mini Navbar -->
+              <div class="mini-nav rounded px-2 py-1.5 mb-2 flex items-center justify-between">
+                <div class="mini-text-w" style="width:30px;height:4px"></div>
+                <div class="flex gap-1">
+                  <div class="mini-text" style="width:12px;height:3px"></div>
+                  <div class="mini-text" style="width:12px;height:3px"></div>
+                  <div class="mini-text" style="width:12px;height:3px"></div>
+                </div>
+              </div>
+              <!-- Mini Hero -->
+              <div class="mini-hero p-2 mb-2 flex items-center gap-2">
+                <div class="mini-circle w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0"></div>
+                <div class="flex-1">
+                  <div class="mini-text-w mb-1" style="width:60%"></div>
+                  <div class="mini-text" style="width:80%"></div>
+                  <div class="mini-text" style="width:50%;margin-top:3px"></div>
+                </div>
+              </div>
+              <!-- Mini Video Grid -->
+              <div class="mini-grid mb-2">
+                <div class="mini-img" style="aspect-ratio:16/9"></div>
+                <div class="mini-img" style="aspect-ratio:16/9"></div>
+                <div class="mini-img" style="aspect-ratio:16/9"></div>
+                <div class="mini-img" style="aspect-ratio:16/9"></div>
+              </div>
+              <!-- Mini Button -->
+              <div class="mini-btn mx-auto"></div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Vlog Portfolio</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Dark theme • Video grid</span>
+                <span class="text-[11px] font-extrabold grad-text">$3</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 2: Online Store -->
+          <div class="group">
+            <div class="tpl-store rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <div class="mini-nav rounded px-2 py-1.5 mb-2 flex items-center justify-between">
+                <div class="mini-text-w" style="width:35px;height:4px"></div>
+                <div class="flex gap-1">
+                  <div class="mini-text" style="width:12px;height:3px"></div>
+                  <div class="mini-text" style="width:12px;height:3px"></div>
+                </div>
+              </div>
+              <!-- Search -->
+              <div class="mini-card p-1.5 mb-2">
+                <div class="mini-text" style="width:90%;height:4px;border-radius:3px"></div>
+              </div>
+              <!-- Products Grid -->
+              <div class="mini-grid mb-2 gap-2">
+                <div class="mini-card p-1.5">
+                  <div class="mini-img mb-1" style="height:16px"></div>
+                  <div class="mini-text" style="width:70%"></div>
+                  <div class="mini-text-w mt-0.5" style="width:40%"></div>
+                </div>
+                <div class="mini-card p-1.5">
+                  <div class="mini-img mb-1" style="height:16px"></div>
+                  <div class="mini-text" style="width:60%"></div>
+                  <div class="mini-text-w mt-0.5" style="width:45%"></div>
+                </div>
+                <div class="mini-card p-1.5">
+                  <div class="mini-img mb-1" style="height:16px"></div>
+                  <div class="mini-text" style="width:75%"></div>
+                  <div class="mini-text-w mt-0.5" style="width:35%"></div>
+                </div>
+                <div class="mini-card p-1.5">
+                  <div class="mini-img mb-1" style="height:16px"></div>
+                  <div class="mini-text" style="width:55%"></div>
+                  <div class="mini-text-w mt-0.5" style="width:50%"></div>
+                </div>
+              </div>
+              <div class="mini-btn mx-auto" style="background:linear-gradient(135deg,#10b981,#059669)"></div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Online Store</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Product grid • Cart</span>
+                <span class="text-[11px] font-extrabold grad-text">$5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 3: Landing Page -->
+          <div class="group">
+            <div class="tpl-landing rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <div class="mini-nav rounded px-2 py-1.5 mb-2 flex items-center justify-between">
+                <div class="mini-text-w" style="width:25px;height:4px"></div>
+                <div class="mini-btn" style="width:20px;height:5px"></div>
+              </div>
+              <!-- Big Hero -->
+              <div class="mini-hero p-2.5 mb-2 text-center">
+                <div class="mini-text-w mx-auto mb-1" style="width:70%;height:5px"></div>
+                <div class="mini-text mx-auto" style="width:90%"></div>
+                <div class="mini-text mx-auto mt-0.5" style="width:55%"></div>
+                <div class="mini-btn mx-auto mt-2" style="width:30px;height:6px"></div>
+              </div>
+              <!-- Feature Icons -->
+              <div class="flex justify-center gap-2 mb-2">
+                <div class="mini-circle w-5 h-5 sm:w-6 sm:h-6"></div>
+                <div class="mini-circle w-5 h-5 sm:w-6 sm:h-6"></div>
+                <div class="mini-circle w-5 h-5 sm:w-6 sm:h-6"></div>
+              </div>
+              <!-- Feature Text -->
+              <div class="space-y-1">
+                <div class="mini-card p-1.5">
+                  <div class="mini-text-w" style="width:50%;height:3px"></div>
+                  <div class="mini-text mt-0.5" style="width:80%;height:2px"></div>
+                </div>
+                <div class="mini-card p-1.5">
+                  <div class="mini-text-w" style="width:40%;height:3px"></div>
+                  <div class="mini-text mt-0.5" style="width:70%;height:2px"></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Landing Page</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Hero • Features • CTA</span>
+                <span class="text-[11px] font-extrabold grad-text">$3</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4: Link in Bio -->
+          <div class="group">
+            <div class="tpl-link rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <div class="flex flex-col items-center pt-4">
+                <div class="mini-circle w-8 h-8 sm:w-10 sm:h-10 mb-2" style="background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(59,130,246,0.2))"></div>
+                <div class="mini-text-w mb-0.5" style="width:50px;height:4px"></div>
+                <div class="mini-text mb-3" style="width:70px;height:2px"></div>
+                <!-- Link Buttons -->
+                <div class="w-full space-y-1.5">
+                  <div class="mini-card p-1.5 flex items-center gap-1.5">
+                    <div class="mini-circle w-3 h-3 flex-shrink-0"></div>
+                    <div class="mini-text" style="width:60%;height:3px"></div>
+                  </div>
+                  <div class="mini-card p-1.5 flex items-center gap-1.5">
+                    <div class="mini-circle w-3 h-3 flex-shrink-0"></div>
+                    <div class="mini-text" style="width:50%;height:3px"></div>
+                  </div>
+                  <div class="mini-card p-1.5 flex items-center gap-1.5">
+                    <div class="mini-circle w-3 h-3 flex-shrink-0"></div>
+                    <div class="mini-text" style="width:65%;height:3px"></div>
+                  </div>
+                  <div class="mini-card p-1.5 flex items-center gap-1.5">
+                    <div class="mini-circle w-3 h-3 flex-shrink-0"></div>
+                    <div class="mini-text" style="width:45%;height:3px"></div>
+                  </div>
+                  <div class="mini-card p-1.5 flex items-center gap-1.5">
+                    <div class="mini-circle w-3 h-3 flex-shrink-0"></div>
+                    <div class="mini-text" style="width:55%;height:3px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Link-in-Bio</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Social links • Animated</span>
+                <span class="text-[11px] font-extrabold grad-text">$2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 5: Catalog -->
+          <div class="group">
+            <div class="tpl-catalog rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <div class="mini-nav rounded px-2 py-1.5 mb-2 flex items-center justify-between">
+                <div class="mini-text-w" style="width:40px;height:4px"></div>
+                <div class="flex gap-1">
+                  <div class="mini-card" style="width:16px;height:6px;border-radius:2px"></div>
+                  <div class="mini-card" style="width:16px;height:6px;border-radius:2px"></div>
+                </div>
+              </div>
+              <!-- Category Tabs -->
+              <div class="flex gap-1 mb-2">
+                <div class="mini-btn" style="width:18px;height:5px;opacity:1"></div>
+                <div class="mini-text" style="width:18px;height:5px;border-radius:3px;opacity:0.4"></div>
+                <div class="mini-text" style="width:18px;height:5px;border-radius:3px;opacity:0.4"></div>
+              </div>
+              <!-- Catalog Items -->
+              <div class="space-y-1.5">
+                <div class="mini-card p-1 flex gap-1.5">
+                  <div class="mini-img w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w mb-0.5" style="width:70%;height:3px"></div>
+                    <div class="mini-text" style="width:50%;height:2px"></div>
+                    <div class="mini-text-w mt-0.5" style="width:30%;height:3px"></div>
+                  </div>
+                </div>
+                <div class="mini-card p-1 flex gap-1.5">
+                  <div class="mini-img w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w mb-0.5" style="width:60%;height:3px"></div>
+                    <div class="mini-text" style="width:55%;height:2px"></div>
+                    <div class="mini-text-w mt-0.5" style="width:35%;height:3px"></div>
+                  </div>
+                </div>
+                <div class="mini-card p-1 flex gap-1.5">
+                  <div class="mini-img w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w mb-0.5" style="width:75%;height:3px"></div>
+                    <div class="mini-text" style="width:45%;height:2px"></div>
+                    <div class="mini-text-w mt-0.5" style="width:28%;height:3px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Product Catalog</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Filter • Search • Grid</span>
+                <span class="text-[11px] font-extrabold grad-text">$4</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6: Blog -->
+          <div class="group">
+            <div class="tpl-blog rounded-xl p-2.5 sm:p-3 mockup-shadow mb-2.5 overflow-hidden" style="aspect-ratio:4/3">
+              <div class="mini-nav rounded px-2 py-1.5 mb-2 flex items-center justify-between">
+                <div class="mini-text-w" style="width:28px;height:4px"></div>
+                <div class="flex gap-1">
+                  <div class="mini-text" style="width:10px;height:3px"></div>
+                  <div class="mini-text" style="width:10px;height:3px"></div>
+                  <div class="mini-text" style="width:10px;height:3px"></div>
+                </div>
+              </div>
+              <!-- Featured Post -->
+              <div class="mini-hero p-2 mb-2">
+                <div class="mini-img mb-1" style="height:18px"></div>
+                <div class="mini-text-w" style="width:60%;height:3px"></div>
+                <div class="mini-text mt-0.5" style="width:40%;height:2px"></div>
+              </div>
+              <!-- Blog List -->
+              <div class="space-y-1.5">
+                <div class="flex gap-1.5">
+                  <div class="mini-img w-7 h-7 sm:w-9 sm:h-9 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w" style="width:80%;height:3px"></div>
+                    <div class="mini-text mt-0.5" style="width:50%;height:2px"></div>
+                  </div>
+                </div>
+                <div class="flex gap-1.5">
+                  <div class="mini-img w-7 h-7 sm:w-9 sm:h-9 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w" style="width:70%;height:3px"></div>
+                    <div class="mini-text mt-0.5" style="width:55%;height:2px"></div>
+                  </div>
+                </div>
+                <div class="flex gap-1.5">
+                  <div class="mini-img w-7 h-7 sm:w-9 sm:h-9 flex-shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="mini-text-w" style="width:65%;height:3px"></div>
+                    <div class="mini-text mt-0.5" style="width:45%;height:2px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-1">
+              <div class="text-[11px] sm:text-xs font-bold">Personal Blog</div>
+              <div class="flex items-center justify-between mt-0.5">
+                <span class="text-[10px] text-white/30">Minimal • Categories</span>
+                <span class="text-[11px] font-extrabold grad-text">$3</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="mt-6 text-center">
+          <p class="text-white/30 text-[11px] mb-3">All templates include HTML/CSS files • Easy to customize • Instructions included</p>
+          <div class="inline-flex items-center gap-2 glass-bright rounded-full px-5 py-2.5">
+            <span class="iconify text-blue-400" data-icon="mdi:whatsapp"></span>
+            <span class="text-xs font-semibold">DM to Order — Instant Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- POSTER 3 — HARGA LENGKAP (Screenshot ini) -->
+    <!-- ============================================= -->
+    <div id="poster-pricing" class="relative bg-[#08080f] rounded-3xl overflow-hidden poster-shadow p-5 sm:p-8">
+      <div class="absolute inset-0 dot-grid opacity-30"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-purple-500/5 rounded-full blur-[100px]"></div>
+
+      <div class="relative z-10">
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center gap-2 glass rounded-full px-3 py-1 mb-3">
+            <span class="text-[10px] text-white/50 font-medium tracking-wide uppercase">Pricing</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold mb-1">Services & Pricing</h2>
+          <p class="text-white/35 text-xs">No hidden fees • Pay after result</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <!-- Service Items -->
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-blue-400 text-lg" data-icon="mdi:youtube"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">Vlog Website</div>
+              <div class="text-[10px] text-white/30">1-3 pages • Video showcase</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$5-15</div>
+          </div>
+
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-emerald-400 text-lg" data-icon="mdi:store"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">Online Store</div>
+              <div class="text-[10px] text-white/30">Product catalog • Cart • Order</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$15-25</div>
+          </div>
+
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-purple-400 text-lg" data-icon="mdi:rocket-launch"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">Landing Page</div>
+              <div class="text-[10px] text-white/30">Hero • Features • CTA</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$5-10</div>
+          </div>
+
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-cyan-400 text-lg" data-icon="mdi:link-variant"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">Link-in-Bio</div>
+              <div class="text-[10px] text-white/30">Custom • Animated • Social links</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$3-8</div>
+          </div>
+
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-orange-400 text-lg" data-icon="mdi:magnify"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">SEO Setup</div>
+              <div class="text-[10px] text-white/30">Meta • Sitemap • Speed • Keywords</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$5-20</div>
+          </div>
+
+          <div class="glass rounded-xl p-3.5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+              <span class="iconify text-pink-400 text-lg" data-icon="mdi:file-document-outline"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold">Ready Templates</div>
+              <div class="text-[10px] text-white/30">Instant download • 6 designs</div>
+            </div>
+            <div class="text-sm font-extrabold grad-text">$2-10</div>
+          </div>
+        </div>
+
+        <!-- Includes -->
+        <div class="mt-5 max-w-2xl mx-auto glass rounded-xl p-4">
+          <div class="text-[10px] text-white/40 font-semibold uppercase tracking-wider mb-2.5">Every website includes:</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Mobile Friendly
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Fast Loading
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Free Hosting
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              HTTPS/SSL
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Revisions
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              1-3 Day Delivery
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Basic SEO
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] text-white/50">
+              <span class="iconify text-emerald-400 text-xs" data-icon="mdi:check-circle"></span>
+              Support
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="mt-5 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div class="flex items-center gap-2 glass-bright rounded-full px-4 py-2">
+            <span class="iconify text-green-400" data-icon="mdi:whatsapp"></span>
+            <span class="text-[11px] font-semibold">WhatsApp: [+6283875008929]</span>
+          </div>
+          <div class="flex items-center gap-2 glass-bright rounded-full px-4 py-2">
+            <span class="iconify text-blue-400" data-icon="mdi:web"></span>
+            <span class="text-[11px] font-semibold">nexoraforgestudios.vercel.app</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- POSTER 4 — STORY SIZE (9:16 untuk IG/TikTok) -->
+    <!-- ============================================= -->
+    <div id="poster-story" class="relative bg-[#08080f] rounded-3xl overflow-hidden poster-shadow mx-auto" style="max-width:360px;aspect-ratio:9/16">
+      <div class="absolute inset-0 dot-grid opacity-30"></div>
+      <div class="absolute top-[-30%] left-[-20%] w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px]"></div>
+      <div class="absolute bottom-[-20%] right-[-20%] w-[250px] h-[250px] bg-purple-500/10 rounded-full blur-[80px]"></div>
+
+      <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center py-10">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+            <span class="iconify text-white text-base" data-icon="mdi:hammer-wrench"></span>
+          </div>
+          <span class="text-sm font-extrabold">Nexora<span class="grad-text">Forge</span></span>
+        </div>
+
+        <!-- Headline -->
+        <h2 class="text-xl sm:text-2xl font-black leading-tight mb-3">
+          Need a<br>Website?
+        </h2>
+
+        <!-- Price -->
+        <div class="mb-4">
+          <span class="text-4xl font-black grad-text">$5</span>
+          <span class="text-white/30 text-xs block mt-0.5">starting price</span>
+        </div>
+
+        <!-- Mini Features -->
+        <div class="w-full space-y-2 mb-5">
+          <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-left">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-circle"></span>
+            <span class="text-[11px] text-white/60">Professional & modern design</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-left">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-circle"></span>
+            <span class="text-[11px] text-white/60">Mobile friendly & fast</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-left">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-circle"></span>
+            <span class="text-[11px] text-white/60">Delivered in 24 hours</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-left">
+            <span class="iconify text-emerald-400 text-sm" data-icon="mdi:check-circle"></span>
+            <span class="text-[11px] text-white/60">Free hosting + SEO</span>
+          </div>
+        </div>
+
+        <!-- For -->
+        <div class="flex items-center gap-2 mb-5 text-[10px] text-white/30">
+          <span>🎬 Vloggers</span>
+          <span>•</span>
+          <span>🛒 Sellers</span>
+          <span>•</span>
+          <span>💼 Business</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="w-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl px-5 py-3 text-center font-bold text-sm shadow-lg shadow-blue-500/20 mb-3">
+          📩 DM to Order Now
+        </div>
+        <div class="text-[10px] text-white/20">Templates from $2 • Pay after result</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
